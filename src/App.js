@@ -1,25 +1,28 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { SearchField } from './SearchField';
+import { WeatherRetriever } from "./WeatherRetriever";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { city: '' };
+
+    this.updateCity = this.updateCity.bind(this);
+  }
+
+  updateCity(newCity) {
+    this.setState({
+      city: newCity
+    });
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="App container">
+        <SearchField onChange={this.updateCity}/>
+        <WeatherRetriever city={this.state.city}/>
       </div>
     );
   }
