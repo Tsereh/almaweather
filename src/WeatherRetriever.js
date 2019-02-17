@@ -54,7 +54,7 @@ export class WeatherRetriever extends Component {
         const { result, placeNotFound, isLoading, error } = this.state;
 
         return (
-            <MainWeather typedPlace={this.props.place} selectedPlaceWeather={result} placeNotFound={placeNotFound} isLoading={isLoading} error={error}/>
+            <MainWeather onPlaceSave={this.props.onPlaceSave} typedPlace={this.props.place} selectedPlaceWeather={result} placeNotFound={placeNotFound} isLoading={isLoading} error={error}/>
         );
     }
 }

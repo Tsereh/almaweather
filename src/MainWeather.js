@@ -5,6 +5,16 @@ import PropTypes from 'prop-types';
 import { Button } from 'reactstrap';
 
 export class MainWeather extends Component {
+    constructor(props) {
+        super(props);
+
+        this.handlePlaceSave = this.handlePlaceSave.bind(this);
+    }
+
+    handlePlaceSave() {
+        this.props.onPlaceSave(this.props.selectedPlaceWeather.name);
+    }
+
     render() {
         const { typedPlace, selectedPlaceWeather, placeNotFound, isLoading, error } = this.props;
         let content;
@@ -21,7 +31,7 @@ export class MainWeather extends Component {
                 <div>
                     <p>There is {selectedPlaceWeather.weather[0].description} in {selectedPlaceWeather.name}</p>
                     <p>{selectedPlaceWeather.main.temp-273.15}°C</p>
-                    <Button color="primary">Bookmark</Button>
+                    <Button color="primary" onClick={this.handlePlaceSave}>Bookmark</Button>
                 </div>
             );
         }

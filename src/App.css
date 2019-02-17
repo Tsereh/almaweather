@@ -32,6 +32,10 @@
   }
 }
 
+.search-field {
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.26);
+}
+
 .main-weather {
   background-color: rgba(238, 238, 238, 0.37);
   border-radius: 12px;
