@@ -7,22 +7,22 @@ class App extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { city: '' };
+        this.state = { place: '' };
 
-        this.updateCity = this.updateCity.bind(this);
+        this.updatePlace = this.updatePlace.bind(this);
     }
 
-    updateCity(newCity) {
+    updatePlace(newPlace) {
         this.setState({
-              city: newCity
+              place: newPlace
         });
     }
 
     render() {
         return (
             <div className="App container">
-                <SearchField onChange={this.updateCity}/>
-                <WeatherRetriever city={this.state.city}/>
+                <SearchField onChange={this.updatePlace}/>
+                <WeatherRetriever place={this.state.place}/>
             </div>
         );
     }

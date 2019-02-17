@@ -1,3 +1,6 @@
+// This component is responsible for search field.
+// It updates it parents(App.js) state.place, every time user types something in to input field.
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { InputGroup, Input, Button, InputGroupAddon } from 'reactstrap';
@@ -12,9 +15,9 @@ export class SearchField extends Component {
     }
 
     handleUserInput(e) {
-        const city = e.target.value;
-        this.setState({userInput: city});
-        this.props.onChange(city);
+        const place = e.target.value;
+        this.setState({userInput: place});
+        this.props.onChange(place);
     }
 
     render() {
