@@ -45,6 +45,7 @@ export class MainWeather extends Component {
 }
 
 MainWeather.propTypes = {
+    onPlaceSave: PropTypes.func,
     typedPlace: PropTypes.string,
     selectedPlaceWeather: PropTypes.object,
     placeNotFound: PropTypes.bool,

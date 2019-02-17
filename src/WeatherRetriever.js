@@ -60,5 +60,6 @@ export class WeatherRetriever extends Component {
 }
 
 WeatherRetriever.propTypes = {
-    place: PropTypes.string
+    place: PropTypes.string,
+    onPlaceSave: PropTypes.func
 };

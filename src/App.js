@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import Cookies from 'universal-cookie';
 import './App.css';
 import { SearchField } from './SearchField';
 import { WeatherRetriever } from "./WeatherRetriever";
-import Cookies from 'universal-cookie';
+import { BookmarkedPlaces } from "./BookmarkedPlaces";
 
 class App extends Component {
     constructor(props) {
@@ -10,7 +11,6 @@ class App extends Component {
 
         const cookies = new Cookies();
         let savedPlaces = [];
-        console.log(cookies.get('savedPlaces'));
         if (cookies.get('savedPlaces')!==undefined) {
             savedPlaces = cookies.get('savedPlaces')
         }
@@ -25,13 +25,13 @@ class App extends Component {
         this.savePlace = this.savePlace.bind(this);
     }
 
-    updatePlace(newPlace) {
+    updatePlace(newPlace) {// Updates state.place, to then be sent to weather retriever to fetch data for it
         this.setState({
               place: newPlace
         });
     }
 
-    savePlace(placeToSave) {// Adds new placeToSave to savedPlaces array & cookies if not yet included
+    savePlace(placeToSave) {// Adds new placeToSave to savedPlaces state & cookies if not yet included
         if(!this.state.savedPlaces.includes(placeToSave)) {
             const sp = [placeToSave, ...this.state.savedPlaces];
             this.setState({
@@ -43,7 +43,6 @@ class App extends Component {
             nextYear.setFullYear(current.getFullYear() + 1);
 
             this.state.cookies.set('savedPlaces', sp, { path: '/', expires: nextYear });
-            console.log(this.state.cookies.get('savedPlaces'));
         }
     }
 
@@ -52,6 +51,7 @@ class App extends Component {
             <div className="App container">
                 <SearchField onChange={this.updatePlace}/>
                 <WeatherRetriever place={this.state.place} onPlaceSave={this.savePlace}/>
+                <BookmarkedPlaces savedPlaces={this.state.savedPlaces} loadPlace={this.updatePlace}/>
             </div>
         );
     }
