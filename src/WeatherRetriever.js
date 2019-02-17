@@ -28,12 +28,12 @@ export class WeatherRetriever extends Component {
         };
     }
 
-    componentWillReceiveProps(nextProps, nextContext) {
+    componentDidUpdate(prevProps, prevContext) {
         // Trying to fetch new weather data every time user types something in to searchfield
-        if (this.props.city !== nextProps.city && nextProps.city !== "") {// To filter out some unnecessary fetches when props are empty or same as previous
+        if (this.props.city !== prevProps.city && this.props.city !== "") {// To filter out some unnecessary fetches when props are empty or same as previous
             this.setState({isLoading: true});// show loading indicator
 
-            fetch(API + nextProps.city + APIAPPID)
+            fetch(API + this.props.city + APIAPPID)
                 .then(response => {
                     if (response.ok) {// Check that there is weather info fetched
                         this.setState({ cityNotFound: false });
@@ -59,9 +59,9 @@ export class WeatherRetriever extends Component {
         }
 
         if (this.props.city === "") {
-            return <p>Please, enter a city name in to a search field to see it's weather.</p>
+            return <p>Please, enter a place name in to a search field to see it's weather.</p>
         } else if (cityNotFound) {
-            return <p>{this.props.city} does not match any of our cities.</p>
+            return <p>{this.props.city} does not match any of known to us places.</p>
         }
 
         return (
