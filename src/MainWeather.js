@@ -12,12 +12,12 @@ export class MainWeather extends Component {
     }
 
     handlePlaceToggle() {
-        const exists = this.props.savedPlaces.includes(this.props.selectedPlaceWeather.name);
-        this.props.onPlaceBookmarkToggle(this.props.selectedPlaceWeather.name, exists);
+        const exists = this.props.savedPlaces.includes(this.props.hits[0].name);
+        this.props.onPlaceBookmarkToggle(this.props.hits[0].name, exists);
     }
 
     render() {
-        const { typedPlace, selectedPlaceWeather, placeNotFound, isLoading, error } = this.props;
+        const { typedPlace, hits, placeNotFound, isLoading, error } = this.props;
 
         let content;
         if (error) {
@@ -30,7 +30,8 @@ export class MainWeather extends Component {
             content = <p className="main-weather-oneliner">{typedPlace} does not match any of known to us places.</p>;
         } else {
             // Is current place already bookmarked
-            const exists = this.props.savedPlaces.includes(this.props.selectedPlaceWeather.name);
+            const selectedPlaceWeather = hits[0];
+            const exists = this.props.savedPlaces.includes(selectedPlaceWeather.name);
 
             content = (
                 <div>
@@ -54,7 +55,7 @@ MainWeather.propTypes = {
     savedPlaces: PropTypes.array,
     onPlaceBookmarkToggle: PropTypes.func,
     typedPlace: PropTypes.string,
-    selectedPlaceWeather: PropTypes.object,
+    hits: PropTypes.array,
     placeNotFound: PropTypes.bool,
     isLoading: PropTypes.bool,
     error: PropTypes.object

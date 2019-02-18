@@ -1,4 +1,5 @@
 // This component fetches weather data, for a place given to it in parameters.
+// Three last hits stored in an array, to prevent from null pointer exceptions when async messes up on rapid successive fetches.
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
@@ -12,19 +13,21 @@ export class WeatherRetriever extends Component {
         super(props);
 
         this.state = {
-            result: { // Initialize results structure, to avoid null pointer exceptions
-                weather: [
-                    {
-                        main: null,
-                        description: null,
-                        icon: null
-                    }
-                ],
-                main: {
+            hits: [
+                {
+                    weather: [
+                        {
+                            main: null,
+                            description: null,
+                            icon: null
+                        }
+                    ],
+                    main: {
                     temp: null
-                },
-                name: null
-            },
+                    },
+                    name: null
+                }
+            ],
             placeNotFound: true,// true if fetched response status 404, to tell user that no places found by search parameters
             isLoading: false,// true if fetching data, to show user some loading indicator
             error: null// true if fetched error
@@ -36,25 +39,31 @@ export class WeatherRetriever extends Component {
         if (this.props.place !== prevProps.place && this.props.place !== "") {// To filter out some unnecessary fetches when props are empty or same as previous
             this.setState({isLoading: true});// show loading indicator
 
+            let responseOk = false;
             fetch(API + this.props.place + APIAPPID)
                 .then(response => {
                     if (response.ok) {// Check that there is weather info fetched
+                        responseOk = true;
                         this.setState({ placeNotFound: false });
                         return response.json();
                     } else {
                         this.setState({placeNotFound: true });
                     }
                 })
-                .then(data => this.setState({ result: data, isLoading: false }))
+                .then(data => {
+                    if (responseOk) {
+                        this.setState({ hits: [data, ...this.state.hits.slice(0, 2)], isLoading: false });
+                    }
+                })
                 .catch(error => this.setState({ error, isLoading: false}));
         }
     }
 
     render() {
-        const { result, placeNotFound, isLoading, error } = this.state;
+        const { hits, placeNotFound, isLoading, error } = this.state;
 
         return (
-            <MainWeather savedPlaces={this.props.savedPlaces} onPlaceBookmarkToggle={this.props.onPlaceBookmarkToggle} typedPlace={this.props.place} selectedPlaceWeather={result} placeNotFound={placeNotFound} isLoading={isLoading} error={error}/>
+            <MainWeather savedPlaces={this.props.savedPlaces} onPlaceBookmarkToggle={this.props.onPlaceBookmarkToggle} typedPlace={this.props.place} hits={hits} placeNotFound={placeNotFound} isLoading={isLoading} error={error}/>
         );
     }
 }
