@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component matches the snapshot 1`] = `
+<div
+  className="App container"
+>
+  <div
+    className="search-field input-group"
+  >
+    <input
+      className="form-control"
+      id="search-field"
+      onChange={[Function]}
+      placeholder="Search"
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className="main-weather"
+  >
+    <p
+      className="main-weather-oneliner"
+    >
+      Please, enter a place name in to a search field to see it's weather.
+    </p>
+  </div>
+  <div
+    className="bookmarked-places"
+  >
+    <button
+      aria-label={null}
+      className="bookmarked-place btn btn-secondary"
+      onClick={[Function]}
+      type="button"
+      value="Espoo"
+    >
+      Espoo
+    </button>
+    <button
+      aria-label={null}
+      className="bookmarked-place btn btn-secondary"
+      onClick={[Function]}
+      type="button"
+      value="Vantaa"
+    >
+      Vantaa
+    </button>
+  </div>
+</div>
+`;
