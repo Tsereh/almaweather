@@ -53,6 +53,8 @@ export class WeatherRetriever extends Component {
                 .then(data => {
                     if (responseOk) {
                         this.setState({ hits: [data, ...this.state.hits.slice(0, 2)], isLoading: false });
+                    } else {
+                        this.setState({isLoading: false});
                     }
                 })
                 .catch(error => this.setState({ error, isLoading: false}));
