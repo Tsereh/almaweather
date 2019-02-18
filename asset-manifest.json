@@ -1,15 +1,15 @@
 {
-  "main.css": "/static/css/main.0b7a5433.chunk.css",
-  "main.js": "/static/js/main.3370d7dc.chunk.js",
-  "main.js.map": "/static/js/main.3370d7dc.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.fdfcfda2.js",
-  "runtime~main.js.map": "/static/js/runtime~main.fdfcfda2.js.map",
-  "static/css/2.01332631.chunk.css": "/static/css/2.01332631.chunk.css",
-  "static/js/2.c516f9d1.chunk.js": "/static/js/2.c516f9d1.chunk.js",
-  "static/js/2.c516f9d1.chunk.js.map": "/static/js/2.c516f9d1.chunk.js.map",
-  "index.html": "/index.html",
-  "precache-manifest.f41d0d8eebd90c5dc3d86bc77a6bf323.js": "/precache-manifest.f41d0d8eebd90c5dc3d86bc77a6bf323.js",
-  "service-worker.js": "/service-worker.js",
-  "static/css/2.01332631.chunk.css.map": "/static/css/2.01332631.chunk.css.map",
-  "static/css/main.0b7a5433.chunk.css.map": "/static/css/main.0b7a5433.chunk.css.map"
+  "main.css": "/almaweather/static/css/main.0b7a5433.chunk.css",
+  "main.js": "/almaweather/static/js/main.b7bd14f9.chunk.js",
+  "main.js.map": "/almaweather/static/js/main.b7bd14f9.chunk.js.map",
+  "runtime~main.js": "/almaweather/static/js/runtime~main.aa738ace.js",
+  "runtime~main.js.map": "/almaweather/static/js/runtime~main.aa738ace.js.map",
+  "static/css/2.01332631.chunk.css": "/almaweather/static/css/2.01332631.chunk.css",
+  "static/js/2.c516f9d1.chunk.js": "/almaweather/static/js/2.c516f9d1.chunk.js",
+  "static/js/2.c516f9d1.chunk.js.map": "/almaweather/static/js/2.c516f9d1.chunk.js.map",
+  "index.html": "/almaweather/index.html",
+  "precache-manifest.acc9872e92338caa00092a4c3323ce0a.js": "/almaweather/precache-manifest.acc9872e92338caa00092a4c3323ce0a.js",
+  "service-worker.js": "/almaweather/service-worker.js",
+  "static/css/2.01332631.chunk.css.map": "/almaweather/static/css/2.01332631.chunk.css.map",
+  "static/css/main.0b7a5433.chunk.css.map": "/almaweather/static/css/main.0b7a5433.chunk.css.map"
 }
