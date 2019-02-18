@@ -1,6 +1,6 @@
 import React from "react";
 import { SearchField } from "./SearchField";
-import { shallow, mount } from "enzyme";
+import { shallow } from "enzyme";
 
 describe("SearchField.handleUserInput", () => {
     it("should call a function passed to it as onChange param, with event.target.value object as param", () => {
