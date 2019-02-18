@@ -106,15 +106,24 @@
   .main-weather {
     width: 60%;
     display: inline-block;
+    margin-top: 0;
+  }
+
+  .search-field {
+    width: 38.5%;
+    position: relative;
+    left: 61%;
+    height: 0;
   }
 
   .bookmarked-places {
     display: inline-block;
     width: 38%;
     margin-left: 11px;
-    height: 370px;
+    margin-top: 19px;
+    height: 353px;
     vertical-align: top;
-    margin-top: 10px;
+    padding-top: 27px;
     overflow-x: auto;
   }
 
