@@ -1,6 +1,7 @@
 ## AlmaWeather
 
-React pohjainen käyttöliittymä lämpötilan hakemiseen.
+React pohjainen käyttöliittymä lämpötilan hakemiseen.<br/>
+Demo: https://tsereh.github.io/almaweather/
 
 ### Käyttöohjeet
 
