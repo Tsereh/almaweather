@@ -23,10 +23,10 @@ export class MainWeather extends Component {
         let content;
         if (error) {
             content = <p className="main-weather-oneliner">{error.message}</p>;
-        } else if (isLoading || selectedPlaceWeather.weather[0].description===null) {// Fixes problem when on fast typing async query messes up on first matching query.
-            content = <p className="main-weather-oneliner">Loading...</p>;
         } else if (typedPlace === "") {
             content = <p className="main-weather-oneliner">Please, enter a place name in to a search field to see it's weather.</p>;
+        } else if (isLoading || selectedPlaceWeather.weather[0].description===null) {// Fixes problem when on fast typing async query messes up on first matching query.
+            content = <p className="main-weather-oneliner">Loading...</p>;
         } else if (placeNotFound) {
             content = <p className="main-weather-oneliner">{typedPlace} does not match any of known to us places.</p>;
         } else {// Show weather info, place found.
