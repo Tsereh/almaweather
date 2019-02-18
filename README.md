@@ -9,6 +9,7 @@ Syötä hakukenttään hakemasi paikan nimen.<br/>
 Käyttöliittymä näyttää syötetyn paikan lämpötilan, jos lämpötilatiedot löytyvät.<br/>
 "Bookmark" napista paikan saa tallennettua talteen, tallennetut paikat tallentuvat evästeisiin, joten ne pysyvät tallella myös ikkunan sulkemisen/päivittämisen jälkeen.<br/>
 "Bookmarked" napista painamalla paikan saa poistettua tallennetuista.
+Hakukentän saa tyhjennettyä nopeasti kentän sivuun ilmestyvästä ruksista.
 
 ### Muuta
 
