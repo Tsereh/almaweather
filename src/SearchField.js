@@ -1,5 +1,5 @@
 // This component is responsible for search field.
-// It updates it parents(App.js) state.place, every time user types something in to input field.
+// It updates its parents(App.js) state.place, every time user types something in to the input field.
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';

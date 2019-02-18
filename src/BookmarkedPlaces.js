@@ -1,5 +1,5 @@
 // This component shows list of bookmarked places.
-// Click on a particular saved place shows its weather information
+// Click on a particular bookmarked place shows its weather information
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';

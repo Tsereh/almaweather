@@ -1,5 +1,5 @@
 // This component fetches weather data, for a place given to it in parameters.
-// Three last hits stored in an array, to prevent from null pointer exceptions when async messes up on rapid successive fetches.
+// Stores three last hits in an array, to prevent from null pointer exceptions when async messes up on rapid successive fetches.
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
@@ -13,7 +13,7 @@ export class WeatherRetriever extends Component {
         super(props);
 
         this.state = {
-            hits: [
+            hits: [// Adds one null hit to an array, to prevent from null pointer exceptions
                 {
                     weather: [
                         {
@@ -35,7 +35,7 @@ export class WeatherRetriever extends Component {
     }
 
     componentDidUpdate(prevProps, prevContext) {
-        // Trying to fetch new weather data every time user types something in to searchfield
+        // Trying to fetch new weather data every time user types something in to SearchField
         if (this.props.place !== prevProps.place && this.props.place !== "") {// To filter out some unnecessary fetches when props are empty or same as previous
             this.setState({isLoading: true});// show loading indicator
 
@@ -52,7 +52,7 @@ export class WeatherRetriever extends Component {
                 })
                 .then(data => {
                     if (responseOk) {
-                        this.setState({ hits: [data, ...this.state.hits.slice(0, 2)], isLoading: false });
+                        this.setState({ hits: [data, ...this.state.hits.slice(0, 2)], isLoading: false });// Prepends fetched data in to an array, keeping last two matched fetches
                     } else {
                         this.setState({isLoading: false});
                     }
