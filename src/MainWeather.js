@@ -8,15 +8,17 @@ export class MainWeather extends Component {
     constructor(props) {
         super(props);
 
-        this.handlePlaceSave = this.handlePlaceSave.bind(this);
+        this.handlePlaceToggle = this.handlePlaceToggle.bind(this);
     }
 
-    handlePlaceSave() {
-        this.props.onPlaceSave(this.props.selectedPlaceWeather.name);
+    handlePlaceToggle() {
+        const exists = this.props.savedPlaces.includes(this.props.selectedPlaceWeather.name);
+        this.props.onPlaceBookmarkToggle(this.props.selectedPlaceWeather.name, exists);
     }
 
     render() {
         const { typedPlace, selectedPlaceWeather, placeNotFound, isLoading, error } = this.props;
+
         let content;
         if (error) {
             content = <p>{error.message}</p>;
@@ -27,11 +29,13 @@ export class MainWeather extends Component {
         } else if (placeNotFound) {
             content = <p>{typedPlace} does not match any of known to us places.</p>;
         } else {
+            // Is current place already bookmarked
+            const exists = this.props.savedPlaces.includes(this.props.selectedPlaceWeather.name);
             content = (
                 <div>
                     <p>There is {selectedPlaceWeather.weather[0].description} in {selectedPlaceWeather.name}</p>
                     <p>{selectedPlaceWeather.main.temp-273.15}°C</p>
-                    <Button color="primary" onClick={this.handlePlaceSave}>Bookmark</Button>
+                    <Button color="primary" onClick={this.handlePlaceToggle}>{ exists ? "Bookmarked" : "Bookmark" }</Button>
                 </div>
             );
         }
@@ -45,7 +49,8 @@ export class MainWeather extends Component {
 }
 
 MainWeather.propTypes = {
-    onPlaceSave: PropTypes.func,
+    savedPlaces: PropTypes.array,
+    onPlaceBookmarkToggle: PropTypes.func,
     typedPlace: PropTypes.string,
     selectedPlaceWeather: PropTypes.object,
     placeNotFound: PropTypes.bool,

@@ -23,7 +23,7 @@ export class SearchField extends Component {
     render() {
         return (
             <InputGroup className="search-field">
-                <Input onChange={this.handleUserInput} value={this.state.userInput} placeholder="Search" />
+                <Input id="search-field" onChange={this.handleUserInput} value={this.state.userInput} placeholder="Search" />
                 <InputGroupAddon addonType="append"><Button color="primary">Search</Button></InputGroupAddon>
             </InputGroup>
         );

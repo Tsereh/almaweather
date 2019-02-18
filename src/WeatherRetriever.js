@@ -54,12 +54,13 @@ export class WeatherRetriever extends Component {
         const { result, placeNotFound, isLoading, error } = this.state;
 
         return (
-            <MainWeather onPlaceSave={this.props.onPlaceSave} typedPlace={this.props.place} selectedPlaceWeather={result} placeNotFound={placeNotFound} isLoading={isLoading} error={error}/>
+            <MainWeather savedPlaces={this.props.savedPlaces} onPlaceBookmarkToggle={this.props.onPlaceBookmarkToggle} typedPlace={this.props.place} selectedPlaceWeather={result} placeNotFound={placeNotFound} isLoading={isLoading} error={error}/>
         );
     }
 }
 
 WeatherRetriever.propTypes = {
     place: PropTypes.string,
-    onPlaceSave: PropTypes.func
+    onPlaceBookmarkToggle: PropTypes.func,
+    savedPlaces: PropTypes.array
 };

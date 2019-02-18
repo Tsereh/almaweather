@@ -16,13 +16,13 @@ class App extends Component {
         }
 
         this.state = {
-            place: '' ,
+            place: "",
             cookies: cookies,
             savedPlaces: savedPlaces
         };
 
         this.updatePlace = this.updatePlace.bind(this);
-        this.savePlace = this.savePlace.bind(this);
+        this.togglePlaceBookmark = this.togglePlaceBookmark.bind(this);
     }
 
     updatePlace(newPlace) {// Updates state.place, to then be sent to weather retriever to fetch data for it
@@ -31,26 +31,30 @@ class App extends Component {
         });
     }
 
-    savePlace(placeToSave) {// Adds new placeToSave to savedPlaces state & cookies if not yet included
-        if(!this.state.savedPlaces.includes(placeToSave)) {
-            const sp = [placeToSave, ...this.state.savedPlaces];
-            this.setState({
-                savedPlaces: sp
-            });
-
-            const current = new Date();
-            const nextYear = new Date();
-            nextYear.setFullYear(current.getFullYear() + 1);
-
-            this.state.cookies.set('savedPlaces', sp, { path: '/', expires: nextYear });
+    togglePlaceBookmark(placeToToggle, remove) {// Adds or removes a new placeToToggle from savedPlaces state & cookies
+        let sp;
+        if(remove) {// Creates new array with or without placeToToggle
+            sp = this.state.savedPlaces.filter(item => item !== placeToToggle);
+        } else {
+            sp = [placeToToggle, ...this.state.savedPlaces];
         }
+
+        this.setState({
+            savedPlaces: sp
+        });
+
+        // Save to cookies
+        const current = new Date();
+        const nextYear = new Date();
+        nextYear.setFullYear(current.getFullYear() + 1);
+        this.state.cookies.set('savedPlaces', sp, { path: '/', expires: nextYear });
     }
 
     render() {
         return (
             <div className="App container">
                 <SearchField onChange={this.updatePlace}/>
-                <WeatherRetriever place={this.state.place} onPlaceSave={this.savePlace}/>
+                <WeatherRetriever place={this.state.place} onPlaceBookmarkToggle={this.togglePlaceBookmark} savedPlaces={this.state.savedPlaces}/>
                 <BookmarkedPlaces savedPlaces={this.state.savedPlaces} loadPlace={this.updatePlace}/>
             </div>
         );
