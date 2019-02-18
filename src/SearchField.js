@@ -3,15 +3,16 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { InputGroup, Input, Button, InputGroupAddon } from 'reactstrap';
+import { InputGroup, Input } from 'reactstrap';
 
 export class SearchField extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { userInput: ''};
+        this.state = { userInput: ""};
 
         this.handleUserInput = this.handleUserInput.bind(this);
+        this.clearUserInput = this.clearUserInput.bind(this);
     }
 
     handleUserInput(e) {
@@ -20,11 +21,21 @@ export class SearchField extends Component {
         this.props.onChange(place);
     }
 
+    clearUserInput() {
+        this.setState({userInput: ""});
+        this.props.onChange("");
+    }
+
     render() {
+        let clearSpan;
+        if (this.state.userInput !== "") {
+            clearSpan = <span className="clear-span clear-cross" onClick={this.clearUserInput}>⨉</span>;
+        }
+
         return (
             <InputGroup className="search-field">
                 <Input id="search-field" onChange={this.handleUserInput} value={this.state.userInput} placeholder="Search" />
-                <InputGroupAddon addonType="append"><Button color="primary">Search</Button></InputGroupAddon>
+                {clearSpan}
             </InputGroup>
         );
     }

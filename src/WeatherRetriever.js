@@ -12,7 +12,7 @@ export class WeatherRetriever extends Component {
         super(props);
 
         this.state = {
-            result: { // Fetched weather info
+            result: { // Initialize results structure, to avoid null pointer exceptions
                 weather: [
                     {
                         main: null,

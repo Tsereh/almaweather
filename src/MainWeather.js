@@ -21,21 +21,23 @@ export class MainWeather extends Component {
 
         let content;
         if (error) {
-            content = <p>{error.message}</p>;
+            content = <p className="main-weather-oneliner">{error.message}</p>;
         } else if (isLoading) {
-            content = <p>Loading...</p>;
+            content = <p className="main-weather-oneliner">Loading...</p>;
         } else if (typedPlace === "") {
-            content = <p>Please, enter a place name in to a search field to see it's weather.</p>;
+            content = <p className="main-weather-oneliner">Please, enter a place name in to a search field to see it's weather.</p>;
         } else if (placeNotFound) {
-            content = <p>{typedPlace} does not match any of known to us places.</p>;
+            content = <p className="main-weather-oneliner">{typedPlace} does not match any of known to us places.</p>;
         } else {
             // Is current place already bookmarked
             const exists = this.props.savedPlaces.includes(this.props.selectedPlaceWeather.name);
+
             content = (
                 <div>
-                    <p>There is {selectedPlaceWeather.weather[0].description} in {selectedPlaceWeather.name}</p>
-                    <p>{selectedPlaceWeather.main.temp-273.15}°C</p>
-                    <Button color="primary" onClick={this.handlePlaceToggle}>{ exists ? "Bookmarked" : "Bookmark" }</Button>
+                    <p>{selectedPlaceWeather.weather[0].description.charAt(0).toUpperCase()}{selectedPlaceWeather.weather[0].description.slice(1)} in {selectedPlaceWeather.name}</p>
+                    <img className="weather-img" src={"http://openweathermap.org/img/w/" + selectedPlaceWeather.weather[0].icon + ".png"} alt={selectedPlaceWeather.weather[0].main + " icon"}/>
+                    <p>{Math.ceil((selectedPlaceWeather.main.temp-273.15)*10)/10}°C</p>
+                    <Button className="bookmark-btn" color="primary" onClick={this.handlePlaceToggle}>{ exists ? "Bookmarked" : "Bookmark" }</Button>
                 </div>
             );
         }

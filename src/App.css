@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  padding: 15px;
 }
 
 .App-logo {
@@ -38,12 +39,89 @@
 
 .main-weather {
   background-color: rgba(238, 238, 238, 0.37);
+  font-size: 1.4em;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
   border-radius: 12px;
   box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.26);
   margin-top: 10px;
   color: rgba(0,0,0,0.75);
   vertical-align: middle;
-  height: 360px;
-  width: 600px;
-  padding-top: 114px;
+  height: 370px;
+  width: 100%;
+  padding: 15px;
+  padding-top: 59px;
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+.clear-cross {
+  padding-top: 8px;
+  display: inline-block;
+  position: absolute;
+  right: 2vw;
+  width: 38px;
+  height: 38px;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.search-field {
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+}
+
+#search-field {
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  z-index: 1;
+}
+
+.bookmark-btn {
+  color: #fff;
+  background-color: rgba(0, 123, 255, 0.57);
+  border-color: rgba(0, 123, 255, 0.78);
+}
+
+.weather-img {
+  width: 6em;
+  height: 6em;
+}
+
+.main-weather-oneliner {
+  margin-top: 67px;
+}
+
+.bookmarked-place {
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.26);
+}
+
+
+@media only screen  and (min-width : 1224px) {
+  .main-weather {
+    width: 60%;
+    display: inline-block;
+  }
+
+  .bookmarked-places {
+    display: inline-block;
+    width: 38%;
+    margin-left: 11px;
+    height: 370px;
+    vertical-align: top;
+    margin-top: 10px;
+    overflow-x: auto;
+  }
+
+  .clear-cross {
+    font-size: 1.4em;
+    right: 0.5vw;
+    padding-top: 0;
+    color: rgba(0, 0, 0, 0.61);
+  }
 }
