@@ -17,6 +17,14 @@ export class BookmarkedPlaces extends Component {
     }
 
     render() {
+        if (this.props.savedPlaces.length === 0) {// If no places is yet bookmarked, tell user about that
+            return (
+                <div className="bookmarked-places">
+                    <span className="empty-bm-notifier">Nothing bookmarked yet</span>
+                </div>
+            )
+        }
+
         return (
             <div className="bookmarked-places">
                 {this.props.savedPlaces.map((savedPlace, key) =>

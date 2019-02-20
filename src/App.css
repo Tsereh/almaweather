@@ -101,6 +101,11 @@
   box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.26);
 }
 
+.empty-bm-notifier {
+  color: rgba(0, 0, 0, 0.5);
+  cursor: default;
+}
+
 
 @media only screen  and (min-width : 1224px) {
   .main-weather {
@@ -132,5 +137,12 @@
     right: 0.5vw;
     padding-top: 0;
     color: rgba(0, 0, 0, 0.61);
+  }
+
+  .empty-bm-notifier {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
   }
 }
