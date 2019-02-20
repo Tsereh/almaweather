@@ -104,6 +104,7 @@
 .empty-bm-notifier {
   color: rgba(0, 0, 0, 0.5);
   cursor: default;
+  font-weight: 300;
 }
 
 
