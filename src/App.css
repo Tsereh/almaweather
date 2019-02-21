@@ -85,13 +85,24 @@
   border-color: rgba(0, 123, 255, 0.78);
 }
 
+.bookmark-btn:focus {
+  box-shadow: none;
+}
+
+.bookmark-btn:hover {
+  background-color: rgba(0, 123, 255, 0.57);
+  border-color: rgba(0, 123, 255, 0.78);
+}
+
 .weather-img {
   width: 6em;
   height: 6em;
 }
 
 .main-weather-oneliner {
-  margin-top: 67px;
+  margin-top: 98px;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .bookmarked-place {
@@ -113,6 +124,12 @@
     width: 60%;
     display: inline-block;
     margin-top: 0;
+  }
+
+  .bookmark-btn:hover {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
   }
 
   .search-field {
