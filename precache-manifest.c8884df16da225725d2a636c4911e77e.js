@@ -4,15 +4,15 @@ self.__precacheManifest = [
     "url": "/almaweather/static/js/runtime~main.aa738ace.js"
   },
   {
-    "revision": "e127a2d970696de2266d",
-    "url": "/almaweather/static/js/main.e127a2d9.chunk.js"
+    "revision": "ec4a9be084afbdd059b7",
+    "url": "/almaweather/static/js/main.ec4a9be0.chunk.js"
   },
   {
     "revision": "c516f9d14c9c3873f07f",
     "url": "/almaweather/static/js/2.c516f9d1.chunk.js"
   },
   {
-    "revision": "e127a2d970696de2266d",
+    "revision": "ec4a9be084afbdd059b7",
     "url": "/almaweather/static/css/main.e31afdce.chunk.css"
   },
   {
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/almaweather/static/css/2.01332631.chunk.css"
   },
   {
-    "revision": "dee5dd35c63a82196f531af71b1da176",
+    "revision": "42d3c82e64339fd948eabac21b1e047f",
     "url": "/almaweather/index.html"
   }
 ];
