@@ -39,11 +39,9 @@ export class WeatherRetriever extends Component {
         if (this.props.place !== prevProps.place && this.props.place !== "") {// To filter out some unnecessary fetches when props are empty or same as previous
             this.setState({isLoading: true});// show loading indicator
 
-            let responseOk = false;
             fetch(API + this.props.place + APIAPPID)
                 .then(response => {
                     if (response.ok) {// Check that there is weather info fetched
-                        responseOk = true;
                         this.setState({ placeNotFound: false });
                         return response.json();
                     } else {
@@ -51,7 +49,7 @@ export class WeatherRetriever extends Component {
                     }
                 })
                 .then(data => {
-                    if (responseOk) {
+                    if (!this.state.placeNotFound) {
                         this.setState({ hits: [data, ...this.state.hits.slice(0, 2)], isLoading: false });// Prepends fetched data in to an array, keeping last two matched fetches
                     } else {
                         this.setState({isLoading: false});
