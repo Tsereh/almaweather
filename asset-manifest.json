@@ -1,15 +1,15 @@
 {
-  "main.css": "/almaweather/static/css/main.e31afdce.chunk.css",
-  "main.js": "/almaweather/static/js/main.ec4a9be0.chunk.js",
-  "main.js.map": "/almaweather/static/js/main.ec4a9be0.chunk.js.map",
+  "main.css": "/almaweather/static/css/main.b5ada6c2.chunk.css",
+  "main.js": "/almaweather/static/js/main.ea836e0e.chunk.js",
+  "main.js.map": "/almaweather/static/js/main.ea836e0e.chunk.js.map",
   "runtime~main.js": "/almaweather/static/js/runtime~main.aa738ace.js",
   "runtime~main.js.map": "/almaweather/static/js/runtime~main.aa738ace.js.map",
   "static/css/2.01332631.chunk.css": "/almaweather/static/css/2.01332631.chunk.css",
   "static/js/2.c516f9d1.chunk.js": "/almaweather/static/js/2.c516f9d1.chunk.js",
   "static/js/2.c516f9d1.chunk.js.map": "/almaweather/static/js/2.c516f9d1.chunk.js.map",
   "index.html": "/almaweather/index.html",
-  "precache-manifest.c8884df16da225725d2a636c4911e77e.js": "/almaweather/precache-manifest.c8884df16da225725d2a636c4911e77e.js",
+  "precache-manifest.8a998e4970d3d3d36393c9a952af8906.js": "/almaweather/precache-manifest.8a998e4970d3d3d36393c9a952af8906.js",
   "service-worker.js": "/almaweather/service-worker.js",
   "static/css/2.01332631.chunk.css.map": "/almaweather/static/css/2.01332631.chunk.css.map",
-  "static/css/main.e31afdce.chunk.css.map": "/almaweather/static/css/main.e31afdce.chunk.css.map"
+  "static/css/main.b5ada6c2.chunk.css.map": "/almaweather/static/css/main.b5ada6c2.chunk.css.map"
 }
