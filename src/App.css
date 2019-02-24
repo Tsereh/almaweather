@@ -3,34 +3,10 @@
   padding: 15px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
+#root {
+  background-image: linear-gradient(#00fdff45 0%, #afbb0047 100%);
+  height: 100%;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .search-field {
@@ -82,7 +58,7 @@
 .bookmark-btn {
   color: #fff;
   background-color: rgba(0, 123, 255, 0.57);
-  border-color: rgba(0, 123, 255, 0.78);
+  border-color: rgb(97, 178, 250);
 }
 
 .bookmark-btn:focus {
@@ -110,6 +86,8 @@
   width: 100%;
   margin-bottom: 5px;
   box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.26);
+  background-color: rgb(97, 178, 250);
+  border-color: rgb(97, 178, 250);
 }
 
 .empty-bm-notifier {
@@ -120,6 +98,10 @@
 
 
 @media only screen  and (min-width : 1224px) {
+  #root {
+    height: 100vh;
+  }
+
   .main-weather {
     width: 60%;
     display: inline-block;

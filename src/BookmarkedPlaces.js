@@ -28,7 +28,7 @@ export class BookmarkedPlaces extends Component {
         return (
             <div className="bookmarked-places">
                 {this.props.savedPlaces.map((savedPlace, key) =>
-                    <Button className="bookmarked-place" color="secondary" key={key} value={savedPlace} onClick={this.handlePlaceClick}>{savedPlace}</Button>
+                    <Button className="bookmarked-place" color="primary" key={key} value={savedPlace} onClick={this.handlePlaceClick}>{savedPlace}</Button>
                 )}
             </div>
         )

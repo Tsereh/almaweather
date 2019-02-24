@@ -30,7 +30,7 @@ exports[`App component matches the snapshot 1`] = `
   >
     <button
       aria-label={null}
-      className="bookmarked-place btn btn-secondary"
+      className="bookmarked-place btn btn-primary"
       onClick={[Function]}
       type="button"
       value="Espoo"
@@ -39,7 +39,7 @@ exports[`App component matches the snapshot 1`] = `
     </button>
     <button
       aria-label={null}
-      className="bookmarked-place btn btn-secondary"
+      className="bookmarked-place btn btn-primary"
       onClick={[Function]}
       type="button"
       value="Vantaa"
